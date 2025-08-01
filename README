@@ -1,0 +1,80 @@
+Code in this folder goes with the manuscript submission, "Beyond pairwise 
+interactions: community-level consequences of temporally correlated 
+phenological shifts" by Hannah Yin and Volker H.W. Rudolf.
+
+Corresponding author's contact information
+- Hannah Yin, hannah.yin@rice.edu
+
+
+DATASETS
+1a. Anuran calling phenophase - nightlycalls.csv
+Data from 2000-12-31 through 2015-12-30 in this dataset were previously 
+published on Dryad in a .xlsx file:
+https://datadryad.org/stash/dataset/doi:10.5061%2Fdryad.84fq2vh
+The csv file used for this study just contains the raw data without the 
+metadata sheet in the .xlsx file. However, besides this, there is a slight 
+difference between the data published on Dryad versus the data used, due to 
+minor errors in data processing caught after publication especially 
+for the Oct-Nov 2011 time series. These errors have not yet been corrected yet 
+on the published version on Dryad. We've also renamed the file from 
+"dailycalls" to "nightlycalls" and the column "dailysum" to "nightlysum" to 
+improve understanding of the data and distinguish it from the Dryad 
+publication.
+
+Data from 2015-12-31 through 2022-12-30 in this dataset have not yet been 
+published.
+
+2. UK Butterfly flight periods - ukbmsphenology2021.csv
+https://doi.org/10.5285/0c59eb20-26e3-4066-86f5-418afae18769
+
+3. Subalpine flowering plants - phensyn-data-2022.csv
+https://doi.org/doi:10.17605/OSF.IO/VTFNR
+
+4. Boreal forest plant phenophases - PhenoDataCleaned_2.0.Rdata
+Published data not accessible at the time of writing unfortunately, due to a 
+broken link or corrupted repository :( Contact Sergey Rosbakh at 
+rosbakh@plen.ku.dk for the data file.
+
+
+SOFTWARE REQUIREMENTS
+Tested with:
+
+1. Python version 3.8
+Published packages (outside standard library): jupyterlab (v3.4.5), 
+pandas (v2.0.3), numpy (v1.24.3), matplotlib (v3.6.0)
+
+2. R version 4.2.0
+Published packages: ggplot2 (v3.5.1), pracma (v2.4.4), dplyr (v1.1.4), 
+purrr (v1.0.2), reshape2 (v1.4.4), forcats (v1.0.0), robustbase (v0.99-2), 
+mgcv (1.9-1)
+
+
+WORKFLOW WITH CODE
+Each code file runs separately without needing to run one first to run 
+another. Optional RData files found in the 'out/saves_RData' folder will speed 
+up the process of reproducing table entries and figures when loaded within the 
+provided R scripts.
+
+Scripts using nightlycalls.csv:
+1. phenology_sims.R
+This R script simulates correlated phenological shifts in communities, runs 
+corresponding analyses, and outputs related table entries and figures: 
+Figure 3-5, Table S1 in the appendix, Figure S2, Figure S5, and Figure S9 in 
+the appendix, as well as parts of Figure 2 and Figure S2 in the appendix.
+
+2. R_sphenocephala_supplement.ipynb 
+This IPython notebook provides information informing simulations of correlated 
+phenological shifts in empirical communities in phenology_sims.R and outputs 
+Figure S3 for the appendix.
+
+Scripts using ukbmsphenology2021.csv, phensyn-data-2022.csv, and 
+PhenoDataCleaned_2.0.Rdata:
+1. real_community_phenology.R 
+This R script processes and analyzes correlation in phenological shifts  
+within 30+ year community datasets of species' phenophases. Outputs include: 
+Figure 6 as well as Table S2 and Figure S7-S8 in the appendix.
+
+
+FUNDING
+This work was supported by NSF DEB Award No. 2445952 to V.H.W. Rudolf and by 
+the NSF Graduate Research Fellowship Program under Grant No. 1842494.
