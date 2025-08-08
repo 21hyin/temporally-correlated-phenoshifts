@@ -488,7 +488,6 @@ barguzin$event_type <- as.factor(barguzin$event_type)
 #  with phenophase centers versus with phenophase durations
 
 barguzin_cast <- dcast(
-    # subset(barguzin, select = -c(Phenophase_English, Phenophase_Abb)),
     subset(barguzin, select = -Phenophase_English),
     ... ~ event_type,
     fun.aggregate = NULL,
