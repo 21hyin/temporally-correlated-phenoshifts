@@ -123,8 +123,8 @@ length(unique(BFLYWINGS$siteno)) > length(unique(BFLYWINGS$sitename))
 
 # select data with species and communities spanning at least 30 years,
 #  considering all flight period data over a given year per species (brood = 0)
-#  for our annual cycle, works best anyway since univoltine species make up
-#  majority
+#  for our annual cycle, works best anyway since this specification makes up
+#  most of the dataset and covers the most species
 bflywings <- filter(
     group_by(subset(BFLYWINGS, subset = (brood == 0)), species_name, siteno),
     max(year, na.rm = TRUE) - min(year, na.rm = TRUE) + 1 >= 30
